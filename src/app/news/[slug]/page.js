@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 const { DUMMY_NEWS } = require("@/dummy-news");
 
-export default function NewsPageDetails({ params }) {
-  const {slug} = params;
+export default async function NewsPageDetails({ params }) {
+  const {slug} =await params;
     const newsItem = DUMMY_NEWS.find((item) => item.slug === slug);
   if (!newsItem) {
      notFound();
